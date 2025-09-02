@@ -3,7 +3,6 @@ import torch.nn.functional as F
 
 @torch.no_grad()
 def sample(model, idx, max_new_tokens=128, temperature=1.0, top_k=None, top_p=None, repetition_penalty=None):
-    """Basit örnekleyici: temperature + opsiyonel top-k/top-p/repetition penalty."""
     for _ in range(max_new_tokens):
         idx_cond = model._slice_ctx(idx) if hasattr(model, "_slice_ctx") else idx
         logits, _ = model(idx_cond)
@@ -22,7 +21,6 @@ def sample(model, idx, max_new_tokens=128, temperature=1.0, top_k=None, top_p=No
             probs = torch.where(probs < thr, torch.zeros_like(probs), probs)
             probs = probs / probs.sum(dim=-1, keepdim=True)
 
-        # (basit) nucleus/top-p istersen buraya ekle
         next_token = torch.multinomial(probs, num_samples=1)
         idx = torch.cat([idx, next_token], dim=1)
     return idx
