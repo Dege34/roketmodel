@@ -2,6 +2,8 @@
 
 This page focuses **only on the model** and provides detailed technical documentation. For training data, CLI, and RAG-lite details, see the main README.
 
+> **Privacy Note:** This project contains **NO** organization names or confidential information. The entire dataset was produced from scratch by the developer (term–definition lists and attribute files). **NO** corporate or proprietary data was used.
+
 ---
 
 ## Table of Contents
