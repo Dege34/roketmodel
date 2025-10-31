@@ -260,4 +260,9 @@ A: `temperature∈[0.6,0.9]`, `top_p∈[0.8,0.95]`, `top_k=50`, paired with a go
 **Q: How to handle long input?**
 A: Chunk and summarize prompts, or enable the experimental block-sparse attention path.
 
+---
 
+## License
+
+This project is released under the **MIT License**.  
+© 2025 Dogan Ege BULTE
